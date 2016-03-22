@@ -311,26 +311,17 @@ endif
 set foldnestmax=2
 
 " ========= some configuration for flake8 ==========
-" Disable/enable automatic checking of current file
-" :PyFlakeToggle
-"
-" Run checks for current file
-" :PyFlake
-"
-" Auto-fix pep8 errors for current file
-" :PyFlakeAuto
-"
-let g:PyFlakeOnWrite = 0
-"let g:PyFlakeCheckers = 'pep8,mccabe,frosted'
-"let g:flake8_quickfix_location="topleft"
-"let g:flake8_show_quickfix=0
-"let g:flake8_quickfix_height=7
+let g:syntastic_python_checkers=['flake8']
+"let g:syntastic_python_checkers = ['pylint']
+"let g:syntastic_python_checkers = ['pyflakes']
+"let g:syntastic_python_flake8_args='--ignore=E501,E126,F401'
 
 "========= set folder only for python file ==============
-autocmd FileType python setlocal foldmethod=indent
-"set foldmethod=indent
+"autocmd FileType python setlocal foldmethod=indent
+set foldmethod=indent
 "zo/zc : open/close where mouse in;
 "zr/zm : open/close all in current file;
 "zi : switch between open and close
 nnoremap <space> za
 nnoremap <F9> zR
+
